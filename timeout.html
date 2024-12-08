@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout</title>
+</head>
+<body>
+    <div class="container">
+    </div>
+</body>
+<script>
+    function startCountdown() {
+        let secondsRemaining = 5;
+        document.write(`<h2>WARNING</h2>`);
+        const shutdownTimer = setInterval(function() {
+            if (secondsRemaining>0) {
+                document.write(`Your device will shut down in ${secondsRemaining} seconds.<br>`);
+                secondsRemaining--;
+            } else {
+                document.write("Your device is shutting down.");
+                clearTimeout(shutdownTimer);
+            }
+        },1000);
+    }
+    startCountdown();
+</script>
+</html>
